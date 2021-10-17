@@ -1,0 +1,33 @@
+﻿@model SofCaptionThis.Models.CatViewModel
+@{ 
+    var url = Url.Action("Caption", "Cats");
+}
+
+@Html.Hidden("CaptionUrl", url)
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2>Time to caption this photo...</h2>
+        <form action="@url" method="post" id="cat-form">
+            <input type="hidden" name="Url" value="@Model.Url" />
+
+            <div class="row">
+                <img src="@Model.Url" alt="Some cat" class="photo" />
+
+            </div>
+            <br />
+            <div class="row">
+                <p>Write your caption here and save it to your computer.</p>
+            </div>
+            <div class="row caption">
+                <input type="text" name="Caption" value="" class="float-left" />
+                <button form="cat-form"
+                        id="submit-cat-form"
+                        type="submit"
+                        class="btn btn-success float-right">
+                    Create
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

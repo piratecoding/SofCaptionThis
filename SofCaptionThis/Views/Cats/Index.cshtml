@@ -1,0 +1,31 @@
+﻿@model SofCaptionThis.Models.CatViewModel
+@{
+    ViewData["Title"] = "Cats";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>Cats</h1>
+        <a href="@Url.Action("Index", "Cats")" class="btn btn-success float-left">
+            Show me a new cat!
+        </a>
+    </div>
+
+
+    <div class="col-md-6 offset-md-3">
+        <img src="@Model.Url" class="photo">
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <p>To caption photos you need to log in.</p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="@Url.Action("Caption", "Cats", new { id = Model.Id })" class="btn btn-success float-left">
+                Caption it!
+            </a>
+        }
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿.photo {
+    max-height: 400px;
+    max-width: auto;
+}
+
+.caption {
+    display: grid;
+    margin-right: auto;
+}
