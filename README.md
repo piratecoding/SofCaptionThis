@@ -14,5 +14,5 @@ Path to saved file is D:\json.txt.
 To run this project just clone the repository.
 
 
-##API info
+## API info
 More info on API that's used can be found here: *https://thecatapi.com/*
